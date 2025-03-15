@@ -6,7 +6,5 @@
 
 <div class="video">
     <Header header="Video: {title}" />
-    <video src={videoURL}>
-        <track kind="captions" />
-    </video>
+    <iframe title="video" width="420" height="auto" src={videoURL}> </iframe>
 </div>
