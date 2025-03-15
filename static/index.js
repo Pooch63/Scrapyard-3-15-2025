@@ -16,7 +16,7 @@ async function fetchVideo() {
 async function fetchQuiz() {
   console.log('js running')
     try {
-      const response = await fetch("/get_quiz");
+      const response = await fetch("/get_quiz1");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
