@@ -1,13 +1,10 @@
 <script lang="ts">
-    import Navbar from '$lib/Website.Navbar.svelte';
     import ModuleLoader from '$lib/Module.Loader.svelte';
     
     import type { PageProps } from './$types';
 	import { type Course } from '$scripts/fetch';
 	let { data }: PageProps & { data: { course: Course } } = $props();
 </script>
-
-<Navbar />
 
 {#if data == null}
 <h1>Uh oh!</h1>

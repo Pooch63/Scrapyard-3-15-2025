@@ -1,8 +1,8 @@
 <script lang="ts">
-    const { question, answers, correct, submit, explanation }: {
+    const { question, answers, correct, submit, explanations }: {
         question: string,
         answers: string[],
-        explanation?: string | null;
+        explanations?: (string | null)[] | null;
         correct: number,
         submit: (num: number) => void
     } = $props();
@@ -25,8 +25,8 @@
     <button onclick={() => validate(num)} class="{!completed ? 'avail' : ''} option {completed && (correct == num || hit == num) ? grade(num) : ''}">
         {answer}
     </button>
-    {#if completed && explanation}
-    <span class="explanation">{explanation}</span>
+    {#if completed && explanations && explanations[num]}
+    <span class="explanation">{explanations[num]}</span>
     {/if}
     {/each}
 </div>
