@@ -20,12 +20,30 @@ def get_vid():
     print(vid)
     return jsonify(vid)
 
-@app.route("/get_quiz")
-def get_quiz():
+@app.route("/get_quiz1")
+def get_quiz1():
     # Open the JSON file and load its data
     with open('course.json', 'r') as file:
         data = json.load(file)
     quiz = data['course']['modules'][0]['lessons'][1]
+    print(quiz)
+    return jsonify(quiz)
+
+@app.route("/get_article")
+def article():
+    # Open the JSON file and load its data
+    with open('course.json', 'r') as file:
+        data = json.load(file)
+    vid = data['course']['modules'][0]['lessons'][2]
+    print(vid)
+    return jsonify(vid)
+
+@app.route("/get_quiz2")
+def get_quiz2():
+    # Open the JSON file and load its data
+    with open('course.json', 'r') as file:
+        data = json.load(file)
+    quiz = data['course']['modules'][0]['lessons'][3]
     print(quiz)
     return jsonify(quiz)
 

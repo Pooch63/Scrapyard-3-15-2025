@@ -1,5 +1,4 @@
 async function fetchVideo() {
-  console.log('js running')
     try {
       const response = await fetch("/get_vid");
       if (!response.ok) {
@@ -13,21 +12,50 @@ async function fetchVideo() {
     }
   }
 
-async function fetchQuiz() {
-  console.log('js running')
+async function fetchQuiz1() {
     try {
-      const response = await fetch("/get_quiz");
+      const response = await fetch("/get_quiz1");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("Quiz data:", data);
+      console.log("Quiz1 data:", data);
       // Process or display the data as needed
     } catch (error) {
       console.error("Error fetching video data:", error);
     }
   }
 
-  // Call the function
-  fetchVideo();
-  fetchQuiz();
+async function fetchArticle() {
+  try {
+    const response = await fetch("/get_article");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log("Article data:", data);
+    // Process or display the data as needed
+  } catch (error) {
+    console.error("Error fetching video data:", error);
+  }
+}
+
+async function fetchQuiz2() {
+  try {
+    const response = await fetch("/get_quiz2");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log("Quiz2 data:", data);
+    // Process or display the data as needed
+  } catch (error) {
+    console.error("Error fetching video data:", error);
+  }
+}
+
+// Call the function
+fetchVideo();
+fetchQuiz1();
+fetchArticle();
+fetchQuiz2();
