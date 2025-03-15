@@ -7,6 +7,8 @@ Everything you need to build a Svelte project, powered by [`sv`](https://github.
 If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
+# pip install everything for flask
+pip install requirements.txt
 # create a new project in the current directory
 npx sv create
 
