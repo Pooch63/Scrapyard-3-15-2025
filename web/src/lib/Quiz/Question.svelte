@@ -1,39 +1,40 @@
 <script lang="ts">
-    import Header from "$lib/Module.Header.svelte";
-
-    const { question, options, explanations, correct }: {
+    const { question, answers, correct, submit, explanation }: {
         question: string,
-        options: string[],
-        explanations?: (string | null)[] | null,
-        correct: number
+        answers: string[],
+        explanation?: string | null;
+        correct: number,
+        submit: (num: number) => void
     } = $props();
 
     let completed = $state(false);
     let hit = $state(NaN);
 
-    console.assert(explanations == null || explanations.length <= options.length)
-
     function validate(num: number) {
         if (!isNaN(hit)) return;
         completed = true;
         hit = num;
+        submit(num);
     }
     const grade = (num: number) => num == correct ? 'correct' : 'incorrect';
 </script>
 
 <div class="question">
-    <Header header="Quiz: &nbsp; {question}" />
-    {#each options as option, num}
+    <h2 class="header">{question}</h2>
+    {#each answers as answer, num}
     <button onclick={() => validate(num)} class="{!completed ? 'avail' : ''} option {completed && (correct == num || hit == num) ? grade(num) : ''}">
-        {option}
+        {answer}
     </button>
-    {#if completed && explanations != null && explanations[num] != null}
-    <span class="explanation">{explanations[num]}</span>
+    {#if completed && explanation}
+    <span class="explanation">{explanation}</span>
     {/if}
     {/each}
 </div>
 
 <style lang="scss">
+    .header {
+        font-size: 1.5rem;
+    }
     .question {
         display: flex;
         flex-direction: column;

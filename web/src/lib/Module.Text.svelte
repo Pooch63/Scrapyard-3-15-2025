@@ -35,16 +35,31 @@
         flex-direction: column;
         padding: 4px 4px;
     }
+
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .content-open {
+        max-height: 500px; /* Adjust this value as needed */
+        transition: max-height 0.3s ease-in;
+    }
+
+    .content-closed {
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+    }
+
     .arrow {
         transition: transform 0.3s;
     }
-    .closed {
+    .open {
         transform: rotate(90deg);
     }
-    .content {
-        transition: transform 0.3;
+    .closed {
+        transform: rotate(0deg);
     }
-    .content-closed {
-        transform: scaleX(0) scaleY(0);
-    }
+    
 </style>
