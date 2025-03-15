@@ -214,3 +214,8 @@ main {
     font-size: 20px;
     line-height: 40px;
 }
+
+div.colored-cad
+{
+    color: #10244C;
+}
