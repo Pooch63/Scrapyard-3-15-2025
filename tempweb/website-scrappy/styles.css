@@ -77,7 +77,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: green;
     text-decoration: none;
     padding: 0 20px;
     width: 100%;
@@ -171,7 +171,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: green;
     text-decoration: none;
     padding: 0 20px;
     width: 100%;
@@ -219,3 +219,4 @@ div.colored-cad
 {
     color: #10244C;
 }
+
